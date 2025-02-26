@@ -155,9 +155,30 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="container_check" data-tf-element-role="contact-method">
-                                        By clicking the 'Free Review Now' button, I hereby grant consent to be contacted at the phone number above for marketing purposes by Injury Review. I understand this may include an automated calling system, artificial voice or an SMS text message. I consent even if my phone number provided is registered on the Federal or State 'Do Not Call Registry'. I acknowledge that standard message and data rates apply. Message frequency varies. Text HELP for help. Text STOP to cancel. Clicking 'Free Review Now' constitutes my electronic signature for my authorization to being contacted and my agreement to the <a
-                                            href="{{route('terms-condition')}}">Terms and Conditions</a> thereof. This authorization is not required to qualify, purchase goods or services. <a
-                                            href="{{route('privacy-policy')}}">Privacy Policy</a>
+                                        By checking this box and clicking “SUBMIT CLAIM REVIEW” I represent that I
+                                        am the line subscriber or primary user of the phone number above (including
+                                        my wireless number if provided) and provide my express consent authorizing
+                                        PLM, Michaels & Sterling consulting LLC, our marketing partners &
+                                        <a
+                                            href="{{url('/')}}">www.lafirelawsuitnow.com</a> to contact me by telephone (including text messages),
+                                        delivered via automated technology to the phone number above regarding legal
+                                        products and/or offerings even if I am on a Federal, State or Do-Not-Call
+                                        registry. I understand that these calls/texts may be delivered via automated
+                                        technology, at any time in any way, including but not limited to
+                                        telemarketing calls using an auto-dialer, text, fax, or email, even if these
+                                        result in charges by my carrier. I further represent that I am a U.S.
+                                        Resident over the age of 18, understand and agree to the Privacy Policy,
+                                        Terms & Conditions, and California Privacy Notice and agree to receive email
+                                        promotions from PLM, Michaels & Sterling consulting LLC,
+                                        <a
+                                            href="{{url('/')}}">www.lafirelawsuitnow.com</a> and our marketing partners. I understand and agree
+                                        that this site uses third-party visit recording technology, including, but
+                                        not limited to, Trusted Form and Jornaya. I understand that my consent is
+                                        not required to continue with my application or is a condition to search for
+                                        legal products and/offerings. I understand I can revoke consent at any time.
+                                        Feel free to review our <a
+                                            href="{{route('terms-condition')}}">Terms and Conditions</a> and <a
+                                            href="{{route('privacy-policy')}}">Privacy Policy</a>.
                                         <input type="checkbox" name="accept_terms" value="Yes"
                                                data-tf-element-role="consent-opt-in" required>
                                         <span class="checkmark"></span>
@@ -174,7 +195,7 @@
                         <div id="captchaMessage" style="color: red; display: none; margin-bottom: 20px;">
                             Security Verification Pending...!
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-md-6">
                                 <p><input type="submit" value="SUBMIT CLAIM REVIEW" data-tf-element-role="submit"
