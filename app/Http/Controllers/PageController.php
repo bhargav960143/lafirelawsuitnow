@@ -95,22 +95,24 @@ class PageController extends Controller
             $request_param['UsedDepoProvera'] = $request->used_depo_provera;
             $request_param['t_id'] = $request->xxTrustedFormCertUrl;
             $request_param['VendorLeadId'] = $request->xxTrustedFormToken;
-
+            $request_param['xxTrustedFormToken'] = $request->xxTrustedFormToken;
+            $request_param['xxTrustedFormCertUrl'] = $request->xxTrustedFormCertUrl;
+            $request_param['xxTrustedFormPingUrl'] = $request->xxTrustedFormPingUrl;
+            Mail::to(config('settings.to_email'))->send(new RequestContactMail($request_param));
+            Log::error("Success Lead Sent On Email");
+            Log::error($request_param);
 
             // $request_param['xxTrustedFormToken'] = $request->xxTrustedFormToken;
             // $request_param['xxTrustedFormCertUrl'] = $request->xxTrustedFormCertUrl;
             // $request_param['xxTrustedFormPingUrl'] = $request->xxTrustedFormPingUrl;
             // Mail::to(config('settings.to_email'))->send(new RequestContactMail($request_param));
 
-            $contact_request = $requestApi->request('POST', "https://nlcr.cagsys.com/leadPost.php?cid=55&fid=3168", [
+            /*$contact_request = $requestApi->request('POST', "https://nlcr.cagsys.com/leadPost.php?cid=55&fid=3168", [
                 'form_params' => $request_param
             ]);
 
             if ($contact_request->getStatusCode() == 200 || $contact_request->getStatusCode() == 201) {
-                $request_param['xxTrustedFormToken'] = $request->xxTrustedFormToken;
-                $request_param['xxTrustedFormCertUrl'] = $request->xxTrustedFormCertUrl;
-                $request_param['xxTrustedFormPingUrl'] = $request->xxTrustedFormPingUrl;
-                Mail::to(config('settings.to_email'))->send(new RequestContactMail($request_param));
+
                 $contents = (string) $contact_request->getBody();
                 Log::error($contents);
                 Log::error("Success Lead Sent On Email");
@@ -119,7 +121,7 @@ class PageController extends Controller
                 Log::error("Error for data post");
                 Log::error($request_param);
                 Log::error($page_response);
-            }
+            }*/
 
             return redirect()->route('thank-you')->with('success', 'Thank you for your time to fill this form, our representative will connect with you asap.');
         } catch (\Exception $e) {
